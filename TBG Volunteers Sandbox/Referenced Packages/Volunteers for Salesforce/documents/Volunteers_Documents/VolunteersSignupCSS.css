@@ -1,0 +1,49 @@
+body {
+    font-family: Arial, FreeSans, sans-serif;
+}
+
+.cssForm {
+	background-color: transparent;
+}
+
+.cssTable {
+    padding-bottom: 1em;
+    border-collapse: collapse;
+}
+
+.cssTableRow {
+    padding-top: .5em;
+    padding-bottom: .5em;
+}
+
+.cssLabelsColumn {
+	width: 150px;
+    vertical-align: top;
+	font-weight: bold;
+	font-size: 1em;
+	text-align: left;	
+	vertical-align: center;
+    padding-top: 0em;
+    padding-bottom: .5em;
+}
+
+.cssLabelsHelpTextColumn {
+	width: 150px;
+    vertical-align: bottom;
+	font-size: .8em;
+	text-align: left;	
+	vertical-align: center;
+    padding-bottom: .5em;
+}
+
+.cssInputFieldsColumn {
+	vertical-align: top;
+    padding-bottom: 2em;
+}
+
+.cssInputFields {
+}
+
+.cssTextArea { 
+	width:300px; 
+}
