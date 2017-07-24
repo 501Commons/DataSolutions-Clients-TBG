@@ -52,40 +52,17 @@
             	<td class="cssInputFieldsColumn" ><apex:inputField value="{!contact.Email}" id="txtEmail" required="true" styleClass="cssInputFields" /></td>
         	</tr>
 		</table>
-		
-		<br/>
-		<apex:outputText style="font-style:italic" value="Additional Info">
-		</apex:outputText>
-		<hr/>
-		<br/>
-		
+					
 		<table class="cssTable" columns="1" >
 			<!--  now add optional fields the user can specify -->
 			<apex:repeat value="{!$ObjectType.Contact.FieldSets.GW_Volunteers__VolunteersSignupFS}" var="f" >
+			
 				<tr class="cssTableRow">
-					<td class="cssLabelsColumn" ><apex:outputLabel value="{!f.Label + IF(OR(f.DBRequired, f.Required), '*', '')}" /></td>
-				<tr class="cssTableRow">
-   				</tr>
-					<td class="cssLabelsHelpTextColumn" ><apex:outputLabel value="{!$ObjectType.Contact.fields[f].inlineHelpText + IF(OR(f.DBRequired, f.Required), '*', '')}" /></td>
-   				</tr>
-				<tr class="cssTableRow">
-   					<td class="cssInputFieldsColumn" ><apex:inputField value="{!Contact[f]}" required="{!IF(OR(f.DBRequired, f.Required), 'true', 'false')}"
-   						styleClass="{!IF(f.Type == 'Long Text Area', 'cssInputFields cssTextArea', 'cssInputFields')}" /></td>
-   				</tr>
-  			</apex:repeat>        
-		</table>
-
-		<br/>
-		<apex:outputText style="font-style:italic" value="Experience">
-		</apex:outputText>
-		<hr/>
-		<br/>
-
-		<table class="cssTable" columns="1" >
-			<!--  now add optional fields the user can specify -->
-			<apex:repeat value="{!$ObjectType.Contact.FieldSets.CustomVolunteersSignupFS}" var="f" >
-				<tr class="cssTableRow">
-					<td class="cssLabelsColumn" ><apex:outputLabel value="{!f.Label + IF(OR(f.DBRequired, f.Required), '*', '')}" /></td>
+					<td class="cssLabelsColumn" >
+						<apex:outputLabel value="{!f.Label + IF(OR(f.DBRequired, f.Required), '*', '')}" />
+						<apex:outputText value="<hr/>" />
+					</td>
+					
 				<tr class="cssTableRow">
    				</tr>
 					<td class="cssLabelsHelpTextColumn" ><apex:outputLabel value="{!$ObjectType.Contact.fields[f].inlineHelpText + IF(OR(f.DBRequired, f.Required), '*', '')}" /></td>
@@ -97,6 +74,7 @@
   			</apex:repeat>        
 		</table>
 
+				
 		<table class="cssTable" columns="1" >
 			<!-- add optional File Upload -->
             <tr class="cssTableRow">            
