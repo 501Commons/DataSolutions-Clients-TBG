@@ -56,21 +56,27 @@
 		<table class="cssTable" columns="1" >
 			<!--  now add optional fields the user can specify -->
 			<apex:repeat value="{!$ObjectType.Contact.FieldSets.GW_Volunteers__VolunteersSignupFS}" var="f" >
-			
+
 				<tr class="cssTableRow">
-					<td class="cssLabelsColumn" >
+					<apex:outputText value="{!IF(CONTAINS(f.Label, 'Section'), '<td class=\"cssSectionLabelsColumn\" >', '<td class=\"cssLabelsColumn\" >')}" escape="false" />
 						<apex:outputLabel value="{!f.Label + IF(OR(f.DBRequired, f.Required), '*', '')}" />
-						<apex:outputText value="<hr/>" />
-					</td>
+						<apex:outputText value="{!IF(CONTAINS(f.Label, 'Section'), '<hr/>', '')}" escape="false" />
+					<apex:outputText value="</td>" escape="false" />
+   				</tr>
 					
 				<tr class="cssTableRow">
+					<apex:outputText value="{!IF(CONTAINS(f.Label, 'Section'), '<td class=\"cssSectionLabelsHelpTextColumn\" >', '<td class=\"cssLabelsHelpTextColumn\" >')}" escape="false" />
+						<apex:outputLabel value="{!$ObjectType.Contact.fields[f].inlineHelpText + IF(OR(f.DBRequired, f.Required), '*', '')}" />
+					<apex:outputText value="</td>" escape="false" />
    				</tr>
-					<td class="cssLabelsHelpTextColumn" ><apex:outputLabel value="{!$ObjectType.Contact.fields[f].inlineHelpText + IF(OR(f.DBRequired, f.Required), '*', '')}" /></td>
-   				</tr>
+   				
 				<tr class="cssTableRow">
-   					<td class="cssInputFieldsColumn" ><apex:inputField value="{!Contact[f]}" required="{!IF(OR(f.DBRequired, f.Required), 'true', 'false')}"
-   						styleClass="{!IF(f.Type == 'Long Text Area', 'cssInputFields cssTextArea', 'cssInputFields')}" /></td>
+					<apex:outputText value="{!IF(CONTAINS(f.Label, 'Section'), '', '<td class=\"cssInputFieldsColumn\" >')}" escape="false" />
+   						<apex:inputField value="{!Contact[f]}" required="{!IF(OR(f.DBRequired, f.Required), 'true', 'false')}"
+   						styleClass="{!IF(f.Type == 'Long Text Area', 'cssInputFields cssTextArea', 'cssInputFields')}" />
+					<apex:outputText value="</td>" escape="false" />
    				</tr>
+   				
   			</apex:repeat>        
 		</table>
 
