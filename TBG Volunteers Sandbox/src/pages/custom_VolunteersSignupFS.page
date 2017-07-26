@@ -93,7 +93,7 @@
             <tr class="cssTableRow">
            		<td class="cssInputFieldsColumn" >
                     <apex:commandButton value="{!$Label.gw_volunteers__labelsubmitbutton}" id="btnSave" 
-                        onclick="document.getElementById('{!$Component.btnSave}').disabled=true;DoSave();" rerender="frm"/>
+                        onclick="document.getElementById('{!$Component.btnSave}').disabled=true;DoSave();" oncomplete="window.location.href='http://techbridgegirls.org/index.php?id=348'"/>
                     <apex:actionFunction name="DoSave" action="{!Save}" />         
            		</td>
 			</tr>	
