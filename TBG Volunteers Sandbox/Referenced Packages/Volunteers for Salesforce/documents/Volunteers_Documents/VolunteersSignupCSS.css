@@ -17,6 +17,18 @@ body {
 }
 
 .cssLabelsColumn {
+	text-indent: 50px;
+	width: 150px;
+    vertical-align: top;
+	font-weight: bold;
+	font-size: 1em;
+	text-align: left;	
+	vertical-align: center;
+    padding-top: 0em;
+    padding-bottom: .5em;
+}
+
+.cssSectionLabelsColumn {
 	width: 150px;
     vertical-align: top;
 	font-weight: bold;
@@ -28,7 +40,8 @@ body {
 }
 
 .cssLabelsHelpTextColumn {
-	width: 150px;
+    padding-left: 5em;
+    width: 150px;
     vertical-align: bottom;
 	font-size: .8em;
 	text-align: left;	
@@ -36,7 +49,17 @@ body {
     padding-bottom: .5em;
 }
 
+.cssSectionLabelsHelpTextColumn {
+	width: 150px;
+    vertical-align: bottom;
+	font-size: .8em;
+	text-align: left;	
+	vertical-align: center;
+    padding-bottom: 2.5em;
+}
+
 .cssInputFieldsColumn {
+    padding-left: 4em;
 	vertical-align: top;
     padding-bottom: 2em;
 }
